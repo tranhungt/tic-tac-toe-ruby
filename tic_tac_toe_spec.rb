@@ -35,6 +35,15 @@ describe Board do
     end
   end
 
+  describe '#diagonals' do
+    it 'should have length of 2' do
+      board.diagonals.should == 2
+    end
+    it 'should have 3 positions per diagonal' do
+      board.diagonals[0].length.should == 3
+    end
+  end
+
   describe '#put_token' do
     it 'puts token at the specified [y,x] position' do
       board.put_token([0,0], :X)
