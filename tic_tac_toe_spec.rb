@@ -37,7 +37,7 @@ describe Board do
 
   describe '#diagonals' do
     it 'should have length of 2' do
-      board.diagonals.should == 2
+      board.diagonals.length.should == 2
     end
     it 'should have 3 positions per diagonal' do
       board.diagonals[0].length.should == 3

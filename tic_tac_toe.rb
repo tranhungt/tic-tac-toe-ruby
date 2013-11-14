@@ -18,4 +18,16 @@ class Board
     y,x = pos
     @rows[y][x] = token
   end
+
+  def diagonals
+    diag1 = [[0,0],[1,1],[2,2]]
+    diag2 = [[2,0],[1,1],[0,2]]
+    [diag1,diag2].map do |diags|
+      diags.map do |diag|
+        y,x = diag
+        @rows[y,x]
+      end
+    end
+    [diag1,diag2]
+  end
 end
