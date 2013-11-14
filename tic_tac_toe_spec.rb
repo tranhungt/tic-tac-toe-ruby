@@ -82,5 +82,12 @@ describe Board do
     end
   end
 
-
+  describe '#draw?' do 
+    it 'checks if all positions are played' do
+      board.rows.map! do |row|
+        row.map! {|el| :X}
+      end
+      board.draw?.should == true
+    end
+  end
 end

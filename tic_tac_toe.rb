@@ -46,4 +46,11 @@ class Board
     end
     false
   end
+
+  def draw?
+    rows.each do |row|
+      return false if row.any?{|el| el == '_'}
+    end
+    true
+  end
 end
