@@ -51,5 +51,36 @@ describe Board do
     end
   end
 
+  describe '#token_at' do
+    it 'gets token symbol at specifi [y,x] coord' do
+      board.put_token([0,0], :X)
+      board.token_at([0,0]).should == :X
+    end
+  end
+
+  describe '#winner?' do
+    it 'checks rows' do
+      [[0,0],[0,1],[0,2]].each do |pos|
+        board.put_token(pos, :X)
+      end
+      board.winner?.should == true
+
+    end
+
+    it 'checks columns' do
+      [[0,0],[1,0],[2,0]].each do |pos|
+        board.put_token(pos, :X)
+      end
+      board.winner?.should == true
+    end
+
+    it 'checks diagonals' do
+      [[0,0],[1,1],[2,2]].each do |pos|
+        board.put_token(pos, :X)
+      end
+      board.winner?.should == true
+    end
+  end
+
 
 end
