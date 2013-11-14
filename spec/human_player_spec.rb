@@ -7,4 +7,11 @@ describe HumanPlayer do
       player.symbol.should == :X
     end
   end
+  describe '#get_move' do
+
+  end
+
+  describe '#invalid_move?' do
+
+  end
 end
