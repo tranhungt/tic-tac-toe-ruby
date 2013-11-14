@@ -53,4 +53,8 @@ class Board
     end
     true
   end
+
+  def finished?
+    draw? || winner?
+  end
 end

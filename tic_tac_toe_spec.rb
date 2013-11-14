@@ -90,4 +90,20 @@ describe Board do
       board.draw?.should == true
     end
   end
+
+  describe '#finished?' do
+    it 'checks for draw' do
+      board.rows.map! do |row|
+        row.map! {|el| :X}
+      end
+      board.finished? == true
+    end
+
+    it 'checks for winner' do
+      [[0,0],[0,1],[0,2]].each do |pos|
+        board.put_token(pos, :X)
+      end
+      board.finished? == true
+    end
+  end
 end
