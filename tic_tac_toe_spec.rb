@@ -35,5 +35,16 @@ describe Board do
     end
   end
 
-  
+  describe '#put_token' do
+    it 'takes params of [y,x] pos and token symbol' do
+
+    end
+
+    it 'puts token at the specified [y,x] position' do
+      board.put_token([0,0], :X)
+      board.rows[0][0].should == :X
+    end
+  end
+
+
 end

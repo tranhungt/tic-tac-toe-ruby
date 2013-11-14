@@ -14,4 +14,8 @@ class Board
     cols
   end
 
+  def put_token(pos, token)
+    y,x = pos
+    @rows[y][x] = token
+  end
 end
