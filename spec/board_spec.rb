@@ -1,5 +1,4 @@
-require 'rspec'
-require './tic_tac_toe.rb'
+require_relative 'spec_helper'
 
 describe Board do
   subject(:board) {Board.new}
