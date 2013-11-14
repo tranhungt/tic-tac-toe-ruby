@@ -29,5 +29,11 @@ describe Board do
     end
   end
 
+  describe '#columns' do
+    it 'should have length of 3' do
+      board.columns.length == 3
+    end
+  end
 
+  
 end
