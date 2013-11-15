@@ -57,4 +57,12 @@ class Board
   def finished?
     draw? || winner?
   end
+
+  def invalid_move?(input)
+    return true unless input.is_a?(Array)
+    return true unless input.length == 2
+    return true unless input.all?{|el| el.is_a?(Fixnum)}
+    return true unless input.all?{|num| num <= 3 && num >= 1}
+    false
+  end
 end

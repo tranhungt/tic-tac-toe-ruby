@@ -105,4 +105,28 @@ describe Board do
       board.finished? == true
     end
   end
+
+  describe '#invaid_move?' do
+    it 'checks for array input' do
+      board.invalid_move?('asdf').should == true
+    end
+
+    it 'checks for length of 2' do
+      board.invalid_move?([1]).should == true
+    end
+
+    it 'checks for 2 integers within the array' do
+      board.invalid_move?(['a','b']).should == true
+    end
+
+    it 'checks for out of bounds' do
+      board.invalid_move?([1,5]).should == true
+    end
+
+    it 'should return false for [1,2]' do
+      board.invalid_move?([1,2]).should == false
+    end
+
+
+  end
 end
