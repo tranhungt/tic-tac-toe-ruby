@@ -63,6 +63,7 @@ class Board
     return true unless input.length == 2
     return true unless input.all?{|el| el.is_a?(Fixnum)}
     return true unless input.all?{|num| num <= 2 && num >= 0}
+    return true unless token_at(input) == '_'
     false
   end
 

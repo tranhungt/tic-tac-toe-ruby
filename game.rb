@@ -1,7 +1,6 @@
 require_relative 'board'
 require_relative 'computer_player'
 require_relative 'human_player'
-require 'debugger'
 class Game
   attr_reader :players, :board
   def initialize
@@ -26,9 +25,9 @@ class Game
   def get_player_move(current_player)
     move = 'asdf'
     while board.invalid_move?(move)
-      debugger
       move = current_player.get_move
     end
+    puts "#{current_player} places #{move}"
     move
   end
 end

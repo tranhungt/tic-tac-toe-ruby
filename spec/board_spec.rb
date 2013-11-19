@@ -126,7 +126,10 @@ describe Board do
     it 'should return false for [1,2]' do
       board.invalid_move?([1,2]).should == false
     end
-
+    it 'checks for occupied spot' do
+      board.put_token([0,0], :X)
+      board.invalid_move?([0,0]).should == true
+    end
 
   end
 end
