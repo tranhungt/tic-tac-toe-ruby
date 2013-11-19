@@ -21,8 +21,12 @@ class Game
       turn = turn == 1 ? 0 : 1
     end
     puts "Game Finished"
-    puts board.winner?
-    puts board.draw?
+    if board.draw?
+      puts "It's a draw!"
+    else
+      turn = turn == 1 ? 0 : 1
+      puts "#{players[turn]} Wins!"
+    end
   end
 
   def get_player_move(current_player)
@@ -35,5 +39,5 @@ class Game
   end
 end
 
-# game = Game.new
-# game.play
+game = Game.new
+game.play
