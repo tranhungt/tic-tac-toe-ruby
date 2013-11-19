@@ -59,7 +59,7 @@ class Board
   end
 
   def finished?
-    draw? || winner?
+    winner? || draw?
   end
 
   def invalid_move?(input)
