@@ -79,6 +79,12 @@ describe Board do
       end
       board.winner?.should == true
     end
+    it 'checks same consecutive symbols' do
+      board.put_token([0,0], :X)
+      board.put_token([0,1], :X)
+      board.put_token([0,2], :O)
+      board.winner?.should == false
+    end
   end
 
   describe '#draw?' do 

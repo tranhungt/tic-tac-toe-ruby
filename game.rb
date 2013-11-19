@@ -20,6 +20,9 @@ class Game
       board.display
       turn = turn == 1 ? 0 : 1
     end
+    puts "Game Finished"
+    puts board.winner?
+    puts board.draw?
   end
 
   def get_player_move(current_player)
@@ -32,5 +35,5 @@ class Game
   end
 end
 
-game = Game.new
-game.play
+# game = Game.new
+# game.play

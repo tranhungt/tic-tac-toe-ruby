@@ -35,14 +35,18 @@ class Board
   end
 
   def winner?
+    is_a_winner(:X) || is_a_winner(:O)
+  end
+
+  def is_a_winner(symbol)
     rows.each do |row|
-      return true if row.all? {|token| token == :X || token == :O}
+      return true if row.all? {|token| token == symbol}
     end
     diagonals.each do |diag|
-      return true if diag.all?{|token| token == :X || token == :O}
+      return true if diag.all?{|token| token == symbol}
     end
     columns.each do |col|
-      return true if col.all?{|token| token == :X || token == :O}
+      return true if col.all?{|token| token == symbol}
     end
     false
   end
