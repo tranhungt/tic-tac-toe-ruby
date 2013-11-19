@@ -62,7 +62,11 @@ class Board
     return true unless input.is_a?(Array)
     return true unless input.length == 2
     return true unless input.all?{|el| el.is_a?(Fixnum)}
-    return true unless input.all?{|num| num <= 3 && num >= 1}
+    return true unless input.all?{|num| num <= 2 && num >= 0}
     false
+  end
+
+  def display
+    rows.each{|row| p row}
   end
 end

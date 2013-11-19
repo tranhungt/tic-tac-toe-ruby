@@ -106,7 +106,7 @@ describe Board do
     end
   end
 
-  describe '#invaid_move?' do
+  describe '#invalid_move?' do
     it 'checks for array input' do
       board.invalid_move?('asdf').should == true
     end
