@@ -7,5 +7,9 @@ describe Game do
     it 'has two players' do
       game.players.length.should == 2
     end
+    it 'has a board' do
+      game.board.should_not be_nil
+    end
   end
+
 end
