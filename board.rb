@@ -74,4 +74,16 @@ class Board
   def display
     rows.each{|row| p row}
   end
+
+  def open_positions
+    open_pos = []
+    rows.each_with_index do |row, y|
+      row.each_with_index do |token, x|
+        if token == '_'
+          open_pos << [y,x]
+        end
+      end
+    end
+    open_pos
+  end
 end
