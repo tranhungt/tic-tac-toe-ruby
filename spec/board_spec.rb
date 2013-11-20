@@ -138,12 +138,21 @@ describe Board do
     end
   end
 
-  describe '#open_position' do
+  describe '#open_positions' do
     it 'returns array of open positions' do
       [[0,0],[0,1],[0,2]].each do |pos|
         board.put_token(pos, :X)
       end
       board.open_positions.should == [[1,0],[1,1],[1,2],[2,0],[2,1],[2,2]]
+    end
+  end
+
+  describe '#taken_positions' do
+    it 'returns array of taken positions' do
+      [[0,0],[0,1],[0,2]].each do |pos|
+        board.put_token(pos, :X)
+      end
+      board.taken_positions.should == [[0,0],[0,1],[0,2]]
     end
   end
 end

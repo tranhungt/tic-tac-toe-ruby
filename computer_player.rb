@@ -25,4 +25,6 @@ class ComputerPlayer < Player
     [[0,1,2].sample, [0,1,2].sample]
   end
   
+  
+  
 end

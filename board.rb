@@ -1,7 +1,8 @@
 class Board 
-  attr_accessor :rows
+  attr_accessor :rows, :taken_positions
   def initialize
     @rows = Array.new(3){|array| Array.new(3){'_'}}
+    @taken_positions = []
   end
 
   def columns
@@ -16,6 +17,7 @@ class Board
 
   def put_token(pos, token)
     y,x = pos
+    taken_positions << pos
     rows[y][x] = token
   end
 
