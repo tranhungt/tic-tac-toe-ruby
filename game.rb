@@ -38,6 +38,3 @@ class Game
     move
   end
 end
-
-# game = Game.new
-# game.play
