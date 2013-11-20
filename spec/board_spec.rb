@@ -136,6 +136,14 @@ describe Board do
       board.put_token([0,0], :X)
       board.invalid_move?([0,0]).should == true
     end
+  end
 
+  describe '#open_position' do
+    it 'returns array of open positions' do
+      [[0,0],[0,1],[0,2]].each do |pos|
+        board.put_token(pos, :X)
+      end
+    end
+    board.open_positions.should == [[1,0],[1,1],[1,2],[2,0],[2,1],[2,2]]
   end
 end
