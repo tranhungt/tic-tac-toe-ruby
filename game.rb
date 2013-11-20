@@ -4,10 +4,10 @@ require_relative 'human_player'
 class Game
   attr_reader :players, :board
   def initialize
-    human = HumanPlayer.new(:X)
-    computer = ComputerPlayer.new(:O)
-    @players = [human, computer]
     @board = Board.new
+    human = HumanPlayer.new(:X)
+    computer = ComputerPlayer.new(:O, board)
+    @players = [human, computer]
   end
 
   def play
@@ -39,5 +39,5 @@ class Game
   end
 end
 
-game = Game.new
-game.play
+# game = Game.new
+# game.play
