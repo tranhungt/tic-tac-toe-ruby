@@ -40,8 +40,6 @@ class ComputerPlayer < Player
     end
     if !block_moves.empty?
       block_moves.sample
-    # elsif !two_point_moves.empty?
-      # two_point_moves.sample
     else
       get_best_move(open_moves, current_points)
       @possible_moves.sample
@@ -65,19 +63,15 @@ class ComputerPlayer < Player
     taken_positions = board.taken_positions
     taken_positions.each do |pos|
       sym = board.token_at(pos)
-      if sym == symbol
-        current_points = combine_points(current_points, POINT_MAP[pos])
-      else
-        negative_points = POINT_MAP[pos].map{|p| p * -1}
-        current_points = combine_points(current_points, negative_points)
-      end
+      new_points = get_points(pos, sym)
+      current_points = combine_points(current_points, new_points)
     end
     current_points
   end
 
   def combine_points(points1, points2)
     new_points = []
-    8.times do |k|
+    points1.length.times do |k|
       new_points << points1[k] + points2[k]
     end
     new_points
@@ -103,20 +97,4 @@ class ComputerPlayer < Player
       end
     end
   end
-
-  # def get_best_move(open_moves, current_points, turn = symbol)
-  #   open_moves.each do |open_pos|
-  #     new_points = POINT_MAP[open_pos]
-  #     temp_points = combine_points(current_points, new_points)
-  #     reduced_open_moves = open_moves.select{|pos| pos != open_pos}
-  #     reduced_open_moves.each do |pos|
-  #       negative_points = POINT_MAP[pos].map{|p| p * -1}
-  #       new_temp_points = combine_points(temp_points, negative_points)
-  #       if new_temp_points.count(-2) == 2
-  #         possible_moves.delete(open_pos)
-  #       end
-  #     end
-  #   end
-  #   possible_moves.sample
-  # end
 end

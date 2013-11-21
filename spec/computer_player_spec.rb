@@ -32,4 +32,12 @@ describe ComputerPlayer do
       computer.negative_two_in_a_row?([-2,0,0]).should == true
     end
   end
+
+  describe '#combine_points' do 
+    it 'adds points from two arrays' do
+      arr1 = [1, 2]
+      arr2 = [1, 1]
+      computer.combine_points(arr1, arr2).should == [2, 3]
+    end
+  end
 end
