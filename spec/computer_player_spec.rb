@@ -5,7 +5,7 @@ describe ComputerPlayer do
   
   describe '#new' do
     it 'is given a symbol' do
-      computer.get_move.should_not be_nil
+      computer.symbol.should_not be_nil
     end
     it 'has human symbol as the opposite' do
       computer.symbol.should_not == computer.human_symbol

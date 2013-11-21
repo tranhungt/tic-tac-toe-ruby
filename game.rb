@@ -21,11 +21,11 @@ class Game
       turn = turn == 1 ? 0 : 1
     end
     puts "Game Finished"
-    if board.draw?
-      puts "It's a draw!"
-    else
+    if board.winner?
       turn = turn == 1 ? 0 : 1
       puts "#{players[turn]} Wins!"
+    else
+      puts "It's a draw!"
     end
   end
 
